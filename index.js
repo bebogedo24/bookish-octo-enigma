@@ -10,18 +10,16 @@ app.set('port', (process.env.PORT || 5000));
 
 
 app.get("/index.js", function (req, res) {
-    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-        client.query('SELECT * FROM stocks', function(err, result) {
-            done();
-            if (err) {
-                console.log(err);
-            }
-            else {
-                res.render('index.ejs', {stocks : result.rows});
-            }
-        });
+    var client = new pg.Client(process.env.DATABASE_URL);
+    client.connect();
+    client.query("SELECT * FROM debtless", function(err, result) {
+        if(err) {
+            console.error(err);
+        } else {
+            res.render('index.ejs', {stocks : result.rows});
+        }
     });
-    
+    //res.render('index.ejs', {stocks : result.rows});
 });
 
 app.listen(app.get('port'), function() {
