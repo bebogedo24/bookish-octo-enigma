@@ -12,7 +12,7 @@ app.set('port', (process.env.PORT || 5000));
 app.get("/index.js", function (req, res) {
     var client = new pg.Client(process.env.DATABASE_URL);
     client.connect();
-    client.query("SELECT * FROM debtless", function(err, result) {
+    client.query("SELECT * FROM stocks", function(err, result) {
         if(err) {
             console.error(err);
         } else {
