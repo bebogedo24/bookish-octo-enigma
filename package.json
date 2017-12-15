@@ -1,0 +1,19 @@
+{
+  "name": "halalstocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "engines": {
+    "node": "6.11.3"
+  },
+  "dependencies": {
+    "ejs": "2.5.6",
+    "express": "4.15.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
