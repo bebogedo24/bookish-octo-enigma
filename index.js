@@ -7,7 +7,7 @@ var ejs = require('ejs');
 var path = require('path');
 var pg = require('pg');
 app.set('port', (process.env.PORT || 5000));
-
+//  LOCALLY debtless, tag, ONLINE stocks, tags
 
 app.get("/index.js", function (req, res) {
     var client = new pg.Client(process.env.DATABASE_URL);
