@@ -1,7 +1,8 @@
 <h1> halal stocks</h1>
 <ls>
-    <%stocks.forEach(function(r) {%>
-        <li><%= r['tags']%></li>
+    <%companies.forEach(function(c) {%>
+        <li><%= c['price']%></li>
+        <li><%= c['tag']%></li>
     <%});%>
 
 </ls>
